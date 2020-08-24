@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common-style.css">
+</head>
+<body>
+    
+    <section class=" center main-container">
+        <div class="main-form">
+            <div class="label center capitaliz">
+                Student Score Card
+            </div>
+            <div class = "student-form">
+                <div class="record">
+                    <div class=" full" >Full Name</div>
+                    <div class ="full">
+                        <input readonly name="fullName" id="fullName" class ="full" type="text" />
+                    </div>
+                </div>
+                <div class="record">
+                    <div class="full" >Roll No.</div>
+                    <div class ="full">
+                        <input readonly name="rollNo" id="rollNo" class ="full" type="text" />
+                    </div>
+                </div>
+                <div class="record">
+                    <div class="full" >College Name</div>
+                    <div class ="full">
+                        <input readonly name="collegeName" id="collegeName" class ="full" type="text" />
+                    </div>
+                </div>
+                <div class="record">
+                    <div class="full" >Class Name</div>
+                    <div class ="full">
+                        <input readonly name="className" id="className" class ="full" type="text" />
+                    </div>
+                </div>
+                <div class="record">
+                    <div class="full" >Academic Year</div>
+                    <div class ="full">
+                        <input readonly name="academicYear" id="academicYear" class ="full" type="text" />
+                    </div>
+                </div>
+                <div class="record">
+                    <div class="full" >Board / University</div>
+                    <div class ="full">
+                        <input readonly name="board" id="board" class ="full" type="text" />
+                    </div>
+                </div>
+            </div>
+            <section class = " common-padding ">
+                <div class="label center">Subject List</div>
+                <div class="record-data column" name="table" id = "table">
+                    <div class = "row common-padding label">
+                        <div class="center">Sr.No.</div>
+                        <div class="center">Subject</div>
+                        <div class="center">Out of Mark</div>
+                        <div class="center">Obtained Mark</div>
+                        
+                    </div>
+                    <div class = "line"></div>
+               </div>
+            </section>
+            <div class="row common-padding">
+                <div></div>
+                <div></div>
+                <div class = "center">Total : <span name="totalOutOfMark" id ="totalOutOfMark"></span></div>
+                <div class = "center">Total :<span name="totalObtainedMark" id ="totalObtainedMark"></span></div>
+            </div>
+            <div class="line"></div>
+            <div class="row common-padding">
+                <div >
+                    Percentage: <span class="percentage" id="percentage" name="percentage"></span>
+                </div>
+                <div >
+                    Grade : <span class="grade" id="grade" name="grade"></span>
+                </div>
+                <div>
+                    Result : <span class="resullt" id="result" name="result"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <script src="./common-script.js"></script>
+    <script>
+        let fullNameControl      = document.querySelector("#fullName");
+        let rollNoControl        = document.querySelector("#rollNo");
+        let recordTable = document.querySelector("#table");
+        let classNameControl = document.querySelector("#className");
+
+        let academicYearControl = document.querySelector("#academicYear");
+        let collegeNameControl = document.querySelector('#collegeName');
+        let boardControl = document.querySelector('#board');
+        let subjectTable = document.querySelector('#table');
+        let totalOutOfMarkControl = document.querySelector('#totalOutOfMark');
+        let totalObtainedMarkControl = document.querySelector('#totalObtainedMark');
+        let percentageControl = document.querySelector("#percentage");
+        let gradeControl = document.querySelector("#grade");
+        let resultControl = document.querySelector("#result");
+
+        displayScoreCard();
+        function displayScoreCard(){
+            try{
+                let resultJsonString = localStorage.getItem("result");
+                if(!resultJsonString){
+                    throw "Result Json String Not Available";
+                }
+                let scoreCardObject = JSON.parse(resultJsonString);
+                fullNameControl.value = scoreCardObject.fullName;
+                rollNoControl.value   = scoreCardObject.rollNo;
+                collegeNameControl.value = scoreCardObject.collegeName;
+                academicYearControl.value = scoreCardObject.academicYear;
+                classNameControl.value = scoreCardObject.className;
+                boardControl.value     = scoreCardObject.board;
+                totalOutOfMarkControl.textContent = scoreCardObject.totalOutOfMarks;
+                totalObtainedMarkControl.textContent = scoreCardObject.totalObtainedMarks;
+                percentageControl.textContent = scoreCardObject.percentage;
+                gradeControl.textContent = scoreCardObject.grade;
+                resultControl.textContent = scoreCardObject.result; 
+                if( scoreCardObject.percentage <35){
+                    resultControl.style.color = "red";
+                }
+                drawSubjects(scoreCardObject , subjectTable);
+            }catch(ex){
+                alert(ex);
+                return; 
+            }
+        }
+
+
+
+    </script>
+
+</body>
+</html>
+
+

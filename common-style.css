@@ -1,0 +1,87 @@
+html , body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+}
+.border{
+    border: 2px solid red;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+*{
+    box-sizing: border-box !important;
+}
+.main-container{
+    padding: 8px;
+    height: 100%;
+    width: 100%;
+}
+.main-form{
+    border: 2px solid gray;
+    width: 40%;
+    height: 70%;
+}
+.label{
+    height: 30px;
+    background: blue;
+    color: white;
+}
+.student-form{
+    display: flex;
+    flex-direction: column;
+}
+.record{
+    display: flex;
+    border-bottom: 2px solid gray;
+    margin: 4px;
+    padding: 10px;
+
+}
+.record > div{
+    flex: 1;
+}
+
+.full{
+    height: 100%;
+    width: 100%;
+}
+.common-margin{
+    margin: 4px;
+}
+.record-data{
+    max-height: 400px;
+    width: 100%;
+    overflow:auto;
+    border:1px solid gray;
+}
+.common-padding{
+    padding: 4px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.row > *{
+    flex: 1;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.line{
+    border-bottom: 1px solid lightgray;
+    margin: 3px;
+}
+.deleteRecord{
+    cursor: pointer;
+    color:Red;
+    font-weight: bold;
+}
+.capitaliz{
+    text-transform: capitalize;
+}

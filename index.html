@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Score Card</title>
+    <link rel="stylesheet" href="./common-style.css">
+</head>
+<body>
+
+        <section class=" center main-container">
+            <div class="main-form">
+                <div class="label center capitaliz">
+                    Student Score Card
+                </div>
+                <div class = "student-form">
+                    <div class="record">
+                        <div class=" full" >Enter Full Name</div>
+                        <div class ="full">
+                            <input name="fullName" id="fullName" class ="full" type="text" />
+                        </div>
+                    </div>
+                    <div class="record">
+                        <div class="full" >Enter Roll No.</div>
+
+                        <div class ="full">
+                            <input name="rollNo" id="rollNo" class ="full" type="text" />
+                        </div>
+                    </div>
+                    <div class="record">
+                        <div class="full" >Subject</div>
+                        <div class=" full ">
+                            <input name="subject" id="subject" type="text" class="full" />
+                        </div>
+                        <div class=" full center ">Out Of</div>
+                        <div class ="full">
+                           <select  name="outOfMarks" id="outOfMarks" class="full">
+                               <option disabled selected value="0">-- select marks --</option>
+                               <option value="50">50</option>
+                               <option value="100">100</option>
+                           </select>
+                        </div>
+                        <div class="full center">Marks Obtained</div>
+                        <div class=" full ">
+                            <input name="obtainedMarks" id="obtainedMarks" type="text" class="full" />
+                        </div>
+                    </div>
+                    <div class="record">
+                        <div class=" full ">
+                            <button name="addMoreSubject" id="addMoreSubject" class="add-more-subject">Add More Subject</button>
+                        </div>
+                        <div class ="full submit">
+                            <button name="submit" id="submit">Submit</button>
+                        </div>
+                        <div class ="full scoreCardButton">
+                            <button name="scoreCardButton" id="scoreCardButton">Show Result</button>
+                        </div>
+                    </div>
+                </div>
+                <section class = " common-padding ">
+                   <div class="record-data column" name="table" id = "table">
+                         <div class = "row common-padding label">
+                            <div class="center">Subject</div>
+                            <div class="center">Outof</div>
+                            <div class="center">Obtained Marks</div>
+                            <div class="center">Action</div>
+                        </div>
+                        <div class = "line"></div>
+                        <!--<div class = "row common-padding">
+                            <div class="center">Physics</div>
+                            <div class="center">100</div>
+                            <div class="center">52</div>
+                        </div>
+                        <div class = "line"></div>
+                        <div class = "row common-padding">
+                            <div class="center">Chem,istry</div>
+                            <div class="center">50</div>
+                            <div class="center">40</div>
+                        </div>
+                        <div class = "line"></div>
+                        <div class = "row common-padding">
+                            <div class="center">Mathematics</div>
+                            <div class="center">100</div>
+                            <div class="center">90</div>
+                        </div> -->
+                   </div>
+                </section>
+
+            </div>
+        </section>
+        <script src="./common-script.js"></script>
+        <script src="./data.js"></script>
+</body>
+</html>
